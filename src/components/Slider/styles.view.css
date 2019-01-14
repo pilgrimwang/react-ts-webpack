@@ -1,0 +1,14 @@
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    & .slider-con {
+        position: relative;
+        height: auto;
+        left: 0;
+        overflow: hidden;
+        transition: left 1s;
+    }
+}

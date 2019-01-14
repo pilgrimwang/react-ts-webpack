@@ -69,7 +69,7 @@ module.exports = {
                 })
             },
             {
-                test: /\.png$|\.gif$/,
+                test: /\.png$|\.gif$|\.jpg$/,
                 loader: 'file-loader',
                 options: {
                     name: '[path][name].[ext]?[hash:8]',

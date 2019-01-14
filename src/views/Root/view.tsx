@@ -6,12 +6,8 @@ export default class RootView extends React.Component<any, any> {
         const { header, main } = this.props;
         return (
             <div className={styles['view']}>
-                <div>
-                    {header}
-                </div>
-                <div>
-                    {main}
-                </div>
+                {header}
+                {main}
             </div>
         )
     }

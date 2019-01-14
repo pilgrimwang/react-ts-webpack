@@ -1,0 +1,10 @@
+.slider-item {
+    display: inline-block;
+    height: auto;
+
+    & .slider-img {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+}
