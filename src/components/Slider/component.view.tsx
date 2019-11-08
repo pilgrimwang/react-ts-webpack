@@ -9,13 +9,13 @@ export default class Slider extends SliderBase {
     render() {
         const count = this.props.items.length
         return (
-            <div 
+            <div
                 className={styles['slider']}
                 onMouseOver={this.stopPlay}
                 onMouseOut={this.goPlay}
             >
-                <ul 
-                    className={styles['slider-con']} 
+                <ul
+                    className={styles['slider-con']}
                     style={{
                         width: this.props.items.length * 100 + "%",
                         left: -100 * this.state.curLocal + "%",
@@ -23,21 +23,21 @@ export default class Slider extends SliderBase {
                     }}
                 >
                     {
-                        this.props.items.map((item, index) =>  (
+                        this.props.items.map((item, index) => (
                             <SliderItem
                                 item={item}
                                 count={count}
-                                key={'item'+index}
+                                key={'item' + index}
                             />
                         ))
                     }
                 </ul>
-                <SliderDots 
+                <SliderDots
                     count={count}
                     curLocal={this.state.curLocal}
                     slider={this.slider}
                 />
-                <SliderArrows slider={this.slider}/>
+                <SliderArrows slider={this.slider} />
             </div>
         )
     }
