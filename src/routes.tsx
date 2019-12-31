@@ -4,7 +4,7 @@ import HeaderBar from './components/HeaderBar/component.view';
 
 export default class Routes extends React.Component<any, any> {
 
-    routes= [
+    routes = [
         {
             path: '/',
             getComponent(nextState, callback) {
@@ -18,9 +18,9 @@ export default class Routes extends React.Component<any, any> {
                         const IndexView = require('./views/IndexView/view').default;
                         callback(null, {
                             header: () => (
-                                <HeaderBar/>
+                                <HeaderBar />
                             ),
-                            main: ({location, history}) => (
+                            main: ({ location, history }) => (
                                 <IndexView
                                     history={history}
                                 />
@@ -32,16 +32,16 @@ export default class Routes extends React.Component<any, any> {
             childRoutes: [
                 {
                     path: 'home',
-                    getComponents: async (nextState, callback) => {
+                    getComponents: (nextState, callback) => {
                         require.ensure([], require => {
                             const HomeView = require('./views/Home/view').default;
                             callback(null, {
-                                header: () => {
-                                    <HeaderBar/>
-                                },
-                                main: ({location, history}) => {
-                                    <HomeView/>
-                                }
+                                header: () => (
+                                    <HeaderBar />
+                                ),
+                                main: () => (
+                                    <HomeView />
+                                )
                             })
                         })
                     }
@@ -51,7 +51,7 @@ export default class Routes extends React.Component<any, any> {
     ]
 
     render() {
-        return(
+        return (
             <Router
                 routes={this.routes}
                 history={hashHistory}
