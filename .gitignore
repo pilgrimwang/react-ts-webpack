@@ -1,4 +1,6 @@
 node_modules/
-lib/
+libs/
 dist/
+testResult/
+.vscode/
 yarn-error.log
